@@ -3,30 +3,26 @@
 @tailwind utilities;
 
 .scrollable-sidebar {
-    height: 100vh; /* Full height of the viewport */
-    overflow-y: auto; /* Only the sidebar scrolls */
-    position: fixed; /* Keep the sidebar fixed on the side */
-    width: 20%; /* Sidebar takes up 1/5 of the view width */
+  height: 100vh; /* Full height of the viewport */
+  overflow-y: auto; /* Only the sidebar scrolls */
+  position: fixed; /* Keep the sidebar fixed on the side */
+  width: 20%; /* Sidebar takes up 1/5 of the view width */
 }
 .content {
-    margin-left: 20%; /* Offset the main content by the width of the sidebar */
+  margin-left: 20%; /* Offset the main content by the width of the sidebar */
 }
 .fixed-top {
-    width: 100%;
-    position: fixed;
-    top: 0;
-    z-index: 1000;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  z-index: 1000;
 }
 
 #navbar {
   view-transition-name: figure-caption;
 }
 
-::view-transition-old(figure-caption),
-::view-transition-new(figure-caption) {
-  position: fixed;
-  top: 0;
-  width: 100%;
+::view-transition-group(figure-caption) {
   z-index: 9999;
+  position: fixed;
 }
-
