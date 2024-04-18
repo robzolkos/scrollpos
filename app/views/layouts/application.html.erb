@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Scrollrestore</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="view-transition" content="same-origin">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <%= turbo_refreshes_with method: :morph, scroll: :preserve %>
+    <%= yield :head %>
+
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= javascript_include_tag "application", "data-turbo-track": "reload", type: "module" %>
+
+  </head>
+  <body>
+    <!-- Navigation Bar -->
+    <nav class="bg-gray-800 text-white px-4 py-2 fixed-top" id="navbar">
+        <h1>Fixed Navbar</h1>
+    </nav>
+
+    <!-- Sidebar -->
+    <div class="scrollable-sidebar bg-gray-200 pt-16"> <!-- pt-16 to offset for the navbar -->
+        <div class="p-4">
+            <p>Top Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
+             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
+               <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
+                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
+             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
+               <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
+                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
+             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
+               <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
+                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
+             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
+               <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
+               <!-- More content -->
+            <p>Top Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
+             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
+               <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
+                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
+             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
+               <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
+                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
+             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
+               <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
+                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
+             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
+               <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
+
+        </div>
+    </div>
+
+    <!-- Main Content Area -->
+    <div class="content pt-16 bg-gray-100"> <!-- pt-16 to offset for the navbar -->
+      <div class="p-4">
+        <%= yield %>
+      </div>
+    </div>
+  </body>
+</html>

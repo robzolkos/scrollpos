@@ -1,0 +1,6 @@
+<div class="grid grid-cols-5 gap-3">
+  <% 100.times do |i| %> 
+    <%= link_to "Product #{i}", product_path(i), class: "bg-blue-300 rounded py-32 flex justify-center items-center text-black font-bold", style: "view-transition-name: product_#{i}" %>
+  <% end %>
+</div>
+
